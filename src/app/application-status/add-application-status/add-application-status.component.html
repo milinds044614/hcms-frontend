@@ -1,0 +1,101 @@
+<!-- <p>add-application-status works!</p>
+<div class="container">
+    <h1 class="text-center">CREATE NEW APPLICATION STATUS</h1>
+    <a href="#" routerLink="/applicationStatus/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="candidate">CANDIDATE PROFILE ID</label>
+            <input type="text" id="candidate" formControlName="candidate" class="form-control">
+            <div *ngIf="formControl['candidate'].touched && formControl['candidate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['candidate'].errors && formControl['candidate'].errors['required']">Candidate profile is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="vacancies">VACANCY ID</label>
+            <input type="text" id="vacancies" formControlName="vacancies" class="form-control">
+            <div *ngIf="formControl['vacancies'].touched && formControl['vacancies'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['vacancies'].errors && formControl['vacancies'].errors['required']">
+                    VACANCY ID
+                    is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status">STATUS</label>
+            <input type="text" id="status" formControlName="status" class="form-control">
+            <div *ngIf="formControl['status'].touched && formControl['status'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['status'].errors && formControl['status'].errors['required']">STATUS is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="applicationDate">APPLICATION DATE</label>
+            <input type="date" id="applicationDate" formControlName="applicationDate" class="form-control">
+            <div *ngIf="formControl['applicationDate'].touched && formControl['applicationDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['applicationDate'].errors && formControl['applicationDate'].errors['required']">
+                    application Date is Required </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="applicationNotes">APPLICATION NOTES</label>
+            <input type="text" id="applicationNotes" formControlName="applicationNotes" class="form-control">
+            <div *ngIf="formControl['applicationNotes'].touched && formControl['applicationNotes'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['applicationNotes'].errors && formControl['applicationNotes'].errors['required']">APPLICATION STATUS NOTES is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">ADD APPLICATION STATUS</button>
+    </form>
+</div> -->
+<p>add-application-status works!</p>
+<div class="container">
+    <h1 class="text-center">CREATE NEW APPLICATION STATUS</h1>
+    <a href="#" routerLink="/applicationStatus/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="candidate">CANDIDATE PROFILE ID</label>
+            <input type="text" id="candidate" formControlName="candidate" class="form-control">
+            <div *ngIf="form.controls['candidate'].touched && form.controls['candidate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="form.controls['candidate'].errors && form.controls['candidate'].errors['required']">Candidate profile is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="vacancies">VACANCY ID</label>
+            <input type="text" id="vacancies" formControlName="vacancies" class="form-control">
+            <div *ngIf="form.controls['vacancies'].touched && form.controls['vacancies'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="form.controls['vacancies'].errors && form.controls['vacancies'].errors['required']">
+                    VACANCY ID
+                    is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status">STATUS</label>
+            <input type="text" id="status" formControlName="status" class="form-control">
+            <div *ngIf="form.controls['status'].touched && form.controls['status'].invalid" class="alert alert-danger">
+                <div *ngIf="form.controls['status'].errors && form.controls['status'].errors['required']">STATUS is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="applicationDate">APPLICATION DATE</label>
+            <input type="date" id="applicationDate" formControlName="applicationDate" class="form-control">
+            <div *ngIf="form.controls['applicationDate'].touched && form.controls['applicationDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="form.controls['applicationDate'].errors && form.controls['applicationDate'].errors['required']">
+                    application Date is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="applicationNotes">APPLICATION NOTES</label>
+            <input type="text" id="applicationNotes" formControlName="applicationNotes" class="form-control">
+            <div *ngIf="form.controls['applicationNotes'].touched && form.controls['applicationNotes'].invalid" class="alert alert-danger">
+                <div *ngIf="form.controls['applicationNotes'].errors && form.controls['applicationNotes'].errors['required']">APPLICATION STATUS NOTES is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">ADD APPLICATION STATUS</button>
+    </form>
+</div>

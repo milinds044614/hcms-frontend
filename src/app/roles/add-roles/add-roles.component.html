@@ -1,0 +1,29 @@
+<p>add-roles works!</p>
+<div class="container">
+    <h1 class="text-center">CREATE NEW role</h1>
+    <a href="#" routerLink="/roles/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="roleName">ROLE NAME</label>
+            <input type="text" id="roleName" formControlName="roleName" class="form-control">
+            <div *ngIf="formControl['roleName'].touched && formControl['roleName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['roleName'].errors && formControl['roleName'].errors['required']">ROLE
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="roleDescription">ROLE DESCRIPTION</label>
+            <input type="text" id="roleDescription" formControlName="roleDescription" class="form-control">
+            <div *ngIf="formControl['roleDescription'].touched && formControl['roleDescription'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['roleDescription'].errors && formControl['roleDescription'].errors['required']">
+                    role Description
+                    is Required </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">ADD ROLE</button>
+    </form>
+</div>

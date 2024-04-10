@@ -1,0 +1,28 @@
+<p>roles-list works!</p>
+<div class="container">
+    <a href="#" routerLink="/roles/add" class="btn btn-success">CREATE ROLE</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ROLE ID</th>
+                <th>ROLE NAME</th>
+                <th>ROLE DESCRIPTION</th>
+                <th width="250px">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of role">
+                <td>{{role.roleId}}</td>
+                <td>{{role.roleName}}</td>
+                <td>{{role.description}}</td>
+                <td>
+                    <a href="#" class="btn btn-info" [routerLink]="['/roles/',role.roleId,'view']">View</a>
+                    <button class="btn btn-primary" type="button"
+                        (click)="editRole(role.roleId)">EDIT</button>
+                    <button class="btn btn-danger" type="button" 
+                        (click)="deleteRole(role.roleId)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

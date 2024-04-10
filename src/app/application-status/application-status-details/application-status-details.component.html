@@ -1,0 +1,73 @@
+<!-- <p>application-status-details works!</p>
+<div class="container">
+    <a href="#" routerLink="/applicationStatus/add" class="btn btn-success">CREATE APPLICATION STATUS</a>
+    <a href="#" routerLink="/applicationStatus/list" class="btn btn-secondary">VIEW APPLICATOIN STATUS List</a>
+    <div>
+        <strong>APPLICATION ID : </strong>
+        <p>{{applicationStatus.applicationId}}</p>
+    </div>
+
+  
+    
+    <div>
+        <strong>CANDIDATE ID : </strong>
+        <p>{{applicationStatus.candidate?.candidateId}}</p>
+    </div>
+    <div>
+        <strong> VACANCIES ID: </strong>
+        <p>{{applicationStatus.vacancies?.vacancyId}}</p>
+    </div>
+    <div>
+        <strong>APPLICATION  DATE : </strong>
+        <p>{{applicationStatus.applicationDate| date:'dd-MM-yyyy' }}</p>
+    </div>
+
+    
+
+    <div>
+        <strong> STATUS: </strong>
+        <p>{{applicationStatus.status}}</p>
+    </div>
+    <div>
+        <strong> APPLICATION NOTE: </strong>
+        <p>{{applicationStatus.applicationNotes}}</p>
+    </div>
+
+</div> -->
+<p>application-status-details works!</p>
+<div class="container">
+    <a routerLink="/applicationStatus/add" class="btn btn-success">CREATE APPLICATION STATUS</a>
+    <a routerLink="/applicationStatus/list" class="btn btn-secondary">VIEW APPLICATION STATUS List</a>
+    
+    <div *ngIf="applicationStatus">
+        <div>
+            <strong>APPLICATION ID: </strong>
+            <p>{{ applicationStatus.applicationId }}</p>
+        </div>
+
+        <div>
+            <strong>CANDIDATE ID: </strong>
+            <p>{{ applicationStatus.candidate?.candidateId }}</p>
+        </div>
+
+        <div>
+            <strong>VACANCIES ID: </strong>
+            <p>{{ applicationStatus.vacancies?.vacancyId }}</p>
+        </div>
+
+        <div>
+            <strong>APPLICATION DATE: </strong>
+            <p>{{ applicationStatus.applicationDate | date:'dd-MM-yyyy' }}</p>
+        </div>
+
+        <div>
+            <strong>STATUS: </strong>
+            <p>{{ applicationStatus.status }}</p>
+        </div>
+
+        <div>
+            <strong>APPLICATION NOTE: </strong>
+            <p>{{ applicationStatus.applicationNotes }}</p>
+        </div>
+    </div>
+</div>

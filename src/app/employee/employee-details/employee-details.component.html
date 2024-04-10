@@ -1,0 +1,99 @@
+<p>employee-details works!</p>
+<div class="container">
+    <a href="#" routerLink="/employees/add" class="btn btn-success">ADD EMPLOYEE</a>
+    <a href="#" routerLink="/employees/list" class="btn btn-secondary">VIEW EMPLOYEES List</a>
+    <div>
+        <strong>PROJECT ID : </strong>
+        <p>{{employee.employeeId}}</p>
+    </div>
+
+    <div>
+        <strong>PROJECT FIRST NAME : </strong>
+        <p>{{employee.firstName}}</p>
+    </div>
+    <div>
+        <strong>LAST NAME : </strong>
+        <p>{{employee.lastName}}</p>
+    </div>
+    <div>
+        <strong>GENDER : </strong>
+        <p>{{employee.gender}}</p>
+    </div>
+    <div>
+        <strong> DATE OF BIRTH: </strong>
+        <p>{{employee.dateOfBirth | date:'dd-MM-yyyy' }}</p>
+    </div>
+    <div>
+        <strong>EMAIL : </strong>
+        <p>{{employee.email}}</p>
+    </div>
+    <div>
+        <strong>PHONE : </strong>
+        <p>{{employee.phone}}</p>
+    </div>
+    <div>
+        <strong>ADDRESS : </strong>
+        <p>{{employee.address}}</p>
+    </div>
+    <div>
+        <strong>NATIONALID : </strong>
+        <p>{{employee.nationalId}}</p>
+    </div>
+    <div>
+        <strong>MARITALSTATUS : </strong>
+        <p>{{employee.maritalStatus}}</p>
+    </div>
+    <div>
+        <strong>EMERGENCY CONTACT NAME : </strong>
+        <p>{{employee.emergencyContactName}}</p>
+    </div>
+    <div>
+        <strong>EMERGENCY CONTACT PHONE : </strong>
+        <p>{{employee.emergencyContactPhone}}</p>
+    </div>
+    <div>
+        <strong>DEPARTMENT : </strong>
+        <p>{{employee.department}}</p>
+    </div>
+    <div>
+        <strong>Manager : </strong>
+        <p>{{employee.manager}}</p>
+    </div>
+    <div>
+        <strong>ROLE : </strong>
+        <p>{{employee.role}}</p>
+    </div>
+    <div>
+        <strong>POSITION : </strong>
+        <p>{{employee.position}}</p>
+    </div>
+    <div>
+        <strong>SKILLSET : </strong>
+        <p>{{employee.skillSet}}</p>
+    </div>
+    <div>
+        <strong>EMPLOYMENT START DATE : </strong>
+        <p>{{employee.employmentStartDate}}</p>
+    </div>
+    <div *ngIf="employee.employmentEndDate">
+        <strong>EMPLOYMENT END DATE : </strong>
+        <p>{{employee.employmentEndDate}}</p>
+    </div>
+    <div>
+        <strong>SALARY : </strong>
+        <p>{{employee.salary}}</p>
+    </div>
+    <div>
+        <strong>EMPLOYMENT STATUS : </strong>
+        <p>{{employee.employmentStatus}}</p>
+    </div>
+    <div>
+        <strong>BANK ACCOUNT NUMBER : </strong>
+        <p>{{employee.bankAccountNumber}}</p>
+    </div>
+    
+
+    
+
+
+</div>

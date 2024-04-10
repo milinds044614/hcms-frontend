@@ -1,0 +1,69 @@
+<!-- <p>application-status-list works!</p>
+<div class="container">
+    <a href="#" routerLink="/applicationStatus/add" class="btn btn-success">CREATE Appliation status</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>APPLICATION ID</th>
+                <th>CANDIDATE</th>
+                <th>VACANCIES</th>
+                <th>STATUS</th>
+                <th>APPLICATION DATE</th>
+                <th>APPLICATION NOTES</th>
+                <th width="250px">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let application of applicationStatus">
+                <td>{{application.applicationId}}</td>
+                <td>{{application.candidate}}</td>
+                <td>{{application.vacancies}}</td>
+                <td>{{application.status}}</td>
+                <td>{{application.applicationDate}}</td>
+                <td>{{application.applicationNotes}}</td>
+                <td>
+                    <a href="#" class="btn btn-info" [routerLink]="['/applicationStatus/',application.applicationId,'view']">View</a>
+                    <button class="btn btn-primary" type="button"
+                        (click)="editAppicationStatus(application.applicationId)">EDIT</button>
+                    <button class="btn btn-danger" type="button"
+                        (click)="deleteApplicationStatus(application.applicationId)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<p>application-status-list works!</p>
+<div class="container">
+    <a href="#" routerLink="/applicationStatus/add" class="btn btn-success">CREATE Application status</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>APPLICATION ID</th>
+                <th>CANDIDATE</th>
+                <th>VACANCIES</th>
+                <th>STATUS</th>
+                <th>APPLICATION DATE</th>
+                <th>APPLICATION NOTES</th>
+                <th width="250px">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let application of applicationStatus">
+                <td>{{ application.applicationId }}</td>
+                <!-- Display candidate's name -->
+                <td>{{ application.candidate?.candidateId }}</td>
+                <!-- Display vacancies' position -->
+                <td>{{ application.vacancies?.vacancyId }}</td>
+                <td>{{ application.status }}</td>
+                <td>{{ application.applicationDate | date: 'short' }}</td>
+                <td>{{ application.applicationNotes }}</td>
+                <td>
+                    <a href="#" class="btn btn-info" [routerLink]="['/applicationStatus/', application.applicationId, 'view']">View</a>
+                    <button class="btn btn-primary" type="button" (click)="editAppicationStatus(application.applicationId)">EDIT</button>
+                    <button class="btn btn-danger" type="button" (click)="deleteApplicationStatus(application.applicationId)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

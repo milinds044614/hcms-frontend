@@ -1,0 +1,62 @@
+<p>edit-application-status works!</p>
+<div class="container">
+    <h1 class="text-center">UPDATE Application Status</h1>
+    <a href="#" routerLink="/applicationStatus/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="applicationId">APPLICATION ID</label>
+            <input type="text" id="applicationId" formControlName="applicationId" [(ngModel)]="updatedApplicationStatus.applicationId"
+                class="form-control" [readOnly]="true">
+        </div>
+
+        <div class="form-group">
+            <label for="candidate">CANDIDATE ID</label>
+            <input type="text" id="candidate" formControlName="candidate" [(ngModel)]="updatedApplicationStatus.candidate"
+                class="form-control">
+            <div *ngIf="formControl['candidate'].touched && formControl['candidate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['candidate'].errors && formControl['candidate'].errors['required']">candidate id is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="vacancies">VACANCIES ID</label>
+            <input type="text" id="vacancies" formControlName="vacancies"
+                [(ngModel)]="updatedApplicationStatus.vacancies" class="form-control">
+            <div *ngIf="formControl['vacancies'].touched && formControl['vacancies'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['vacancies'].errors && formControl['vacancies'].errors['required']">
+                   vacancies id is Required </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="status">STATUS</label>
+            <input type="text" id="status" formControlName="status" [(ngModel)]="updatedApplicationStatus.status"
+                class="form-control">
+            <div *ngIf="formControl['status'].touched && formControl['status'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['status'].errors && formControl['status'].errors['required']">status is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="applicationDate">APPLICATION DATE</label>
+            <p><strong>{{ updatedApplicationStatus.applicationDate}}</strong></p>
+            <input type="date" id="applicationDate" formControlName="applicationDate" [(ngModel)]="updatedApplicationStatus.applicationDate"
+                class="form-control">
+            <div *ngIf="formControl['applicationDate'].touched && formControl['applicationDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['applicationDate'].errors && formControl['applicationDate'].errors['required']">application date is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="applicationNotes">APPLICATION NOTES</label>
+            <input type="text" id="applicationNotes" formControlName="applicationNotes" [(ngModel)]="updatedApplicationStatus.applicationNotes"
+                class="form-control">
+            <div *ngIf="formControl['applicationNotes'].touched && formControl['applicationNotes'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['applicationNotes'].errors && formControl['applicationNotes'].errors['required']">application notes is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">UPDATE PROJECT</button>
+    </form>
+</div>

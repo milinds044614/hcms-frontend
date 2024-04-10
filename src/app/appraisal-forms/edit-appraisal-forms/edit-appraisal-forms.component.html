@@ -1,0 +1,45 @@
+<p>edit-appraisal-forms works!</p>
+<div class="container">
+    <h1 class="text-center">UPDATE APPRAISAL FORM</h1>
+    <a href="#" routerLink="/appraisalForms/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="formId">FORM ID</label>
+            <input type="text" id="formId" formControlName="formId" [(ngModel)]="updatedAppraisalForms.formId"
+                class="form-control" [readOnly]="true">
+        </div>
+
+        <div class="form-group">
+            <label for="employee">EMPLOYEE ID</label>
+            <input type="text" id="employee" formControlName="employee" [(ngModel)]="updatedAppraisalForms.employee"
+                class="form-control">
+            <div *ngIf="formControl['employee'].touched && formControl['employee'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['employee'].errors && formControl['employee'].errors['required']">EMPLOYEE ID is Required </div>
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="submissionDate">SUBMISSION DATE</label>
+            <p><strong>{{ updatedAppraisalForms.submissionDate}}</strong></p>
+            <input type="date" id="submissionDate" formControlName="submissionDate" [(ngModel)]="updatedAppraisalForms.submissionDate"
+                class="form-control">
+            <div *ngIf="formControl['submissionDate'].touched && formControl['submissionDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['submissionDate'].errors && formControl['submissionDate'].errors['required']">SUBMISSION DATE is Required </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="reviewer">REVIEWER ID</label>
+            <input type="text" id="reviewer" formControlName="reviewer" [(ngModel)]="updatedAppraisalForms.reviewer"
+                class="form-control">
+            <div *ngIf="formControl['reviewer'].touched && formControl['reviewer'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['reviewer'].errors && formControl['reviewer'].errors['required']">REVIEWER ID is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">UPDATE APPRAISAL</button>
+    </form>
+</div>

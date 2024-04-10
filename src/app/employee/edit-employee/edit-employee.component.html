@@ -1,0 +1,227 @@
+<p>edit-employee works!</p>
+<div class="container">
+    <h1 class="text-center">UPDATE Employee</h1>
+    <a href="#" routerLink="/employees/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="employeeId">EMPLOYEE ID</label>
+            <input type="text" id="employeeId" formControlName="employeeId" [(ngModel)]="updatedEmployee.employeeId"
+                class="form-control" [readOnly]="true">
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First NAME</label>
+            <input type="text" id="firstName" formControlName="firstName" [(ngModel)]="updatedEmployee.firstName"
+                class="form-control">
+            <div *ngIf="formControl['firstName'].touched && formControl['firstName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['firstName'].errors && formControl['firstName'].errors['required']">FIRST NAME is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">First NAME</label>
+            <input type="text" id="lastName" formControlName="lastName" [(ngModel)]="updatedEmployee.lastName"
+                class="form-control">
+            <div *ngIf="formControl['lastName'].touched && formControl['lastName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['lastName'].errors && formControl['lastName'].errors['required']">FIRST NAME is Required </div>
+            </div>
+        </div>
+       
+        <div class="col-md-4">
+            <label for="gender">GENDER</label>
+            <select id="gender" class="form-control" formControlName="gender" name="gender" [(ngModel)]="updatedEmployee.gender">
+              <option selected>Choose...</option>
+              <option>MAN</option>
+              <option>WOMAN</option>
+              <option>TRANSGENDER</option>
+            </select>
+            <div *ngIf="formControl['gender'].touched && formControl['gender'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['gender'].errors && formControl['gender'].errors['required']">
+                   GENDER
+                    is Required </div>
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="dateOfBirth">DATE OF BIRTH</label>
+            <p><strong>{{ updatedEmployee.dateOfBirth}}</strong></p>
+            <input type="date" id="dateOfBirth" formControlName="dateOfBirth" [(ngModel)]="updatedEmployee.dateOfBirth"
+                class="form-control">
+            <div *ngIf="formControl['dateOfBirth'].touched && formControl['dateOfBirth'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['dateOfBirth'].errors && formControl['dateOfBirth'].errors['required']">DATE OF BIRTH Date is Required </div>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="text" id="email" formControlName="email" [(ngModel)]="updatedEmployee.email"
+                class="form-control">
+            <div *ngIf="formControl['email'].touched && formControl['email'].invalid" class="alert alert-danger">
+                <div *ngIf="formControl['email'].errors && formControl['email'].errors['required']">EMAIL
+                    Name is Required </div>
+            </div>
+        </div>
+        
+       
+        <div class="form-group">
+            <label for="phone">PHONE NO</label>
+            <input type="text" id="phone" formControlName="phone" [(ngModel)]="updatedEmployee.phone"
+                class="form-control">
+            <div *ngIf="formControl['phone'].touched && formControl['phone'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['phone'].errors && formControl['phone'].errors['required']">PHONE
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">ADDRESS</label>
+            <input type="text" id="address" formControlName="address" [(ngModel)]="updatedEmployee.address"
+                class="form-control">
+            <div *ngIf="formControl['address'].touched && formControl['address'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['address'].errors && formControl['address'].errors['required']">ADDRESS is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nationalId">NationalId</label>
+            <input type="text" id="nationalId" formControlName="nationalId" [(ngModel)]="updatedEmployee.nationalId"
+                class="form-control">
+            <div *ngIf="formControl['nationalId'].touched && formControl['nationalId'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['nationalId'].errors && formControl['nationalId'].errors['required']">NATIONAL ID is Required </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="maritalStatus">MARITAL STATUS</label>
+            <select id="maritalStatus" class="form-control" formControlName="maritalStatus" name="maritalStatus" [(ngModel)]="updatedEmployee.maritalStatus">
+              <option selected>Choose...</option>
+              <option VALUE="SINGLE">SINGLE</option>
+              <option VALUE="MARRIED">MARRIED</option>
+              <option VALUE="DIVORCED">DIVORCED</option>
+            </select>
+            <div *ngIf="formControl['maritalStatus'].touched && formControl['maritalStatus'].invalid"
+            class="alert alert-danger">
+            <div *ngIf="formControl['maritalStatus'].errors && formControl['maritalStatus'].errors['required']">MARITAL is Required </div>
+        </div>
+          </div>
+        <div class="form-group">
+            <label for="department">DEPARTMENT</label>
+            <input type="text" id="department" formControlName="department" [(ngModel)]="updatedEmployee.department"
+                class="form-control">
+            <div *ngIf="formControl['department'].touched && formControl['department'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['department'].errors && formControl['department'].errors['required']">DEPARTMENT is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="role">ROLE</label>
+            <input type="text" id="role" formControlName="role" [(ngModel)]="updatedEmployee.role"
+                class="form-control">
+            <div *ngIf="formControl['role'].touched && formControl['role'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['role'].errors && formControl['role'].errors['required']">ROLE is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rmanager">MANAGER</label>
+            <input type="text" id="rmanager" formControlName="rmanager" [(ngModel)]="updatedEmployee.manager"
+                class="form-control">
+            <div *ngIf="formControl['rmanager'].touched && formControl['rmanager'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['rmanager'].errors && formControl['rmanager'].errors['required']">MANAGER
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emergencyContactName">EMERGENCY CONTACT NAME</label>
+            <input type="text" id="emergencyContactName" formControlName="emergencyContactName" [(ngModel)]="updatedEmployee.emergencyContactName"
+                class="form-control">
+            <div *ngIf="formControl['emergencyContactName'].touched && formControl['emergencyContactName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['emergencyContactName'].errors && formControl['emergencyContactName'].errors['required']">EMERGENCY CONTACT
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emergencyContactPhone">EMERGENCY CONTACT PHONE</label>
+            <input type="text" id="emergencyContactPhone" formControlName="emergencyContactPhone" [(ngModel)]="updatedEmployee.emergencyContactPhone"
+                class="form-control">
+            <div *ngIf="formControl['emergencyContactPhone'].touched && formControl['emergencyContactPhone'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['emergencyContactPhone'].errors && formControl['emergencyContactPhone'].errors['required']">EMERGENCY CONTACT PHONE is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="position">POSITION</label>
+            <input type="text" id="position" formControlName="position" [(ngModel)]="updatedEmployee.position"
+                class="form-control">
+            <div *ngIf="formControl['position'].touched && formControl['position'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['position'].errors && formControl['position'].errors['required']">POSITION is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="skillSet">SKILL SET</label>
+            <input type="text" id="skillSet" formControlName="skillSet" [(ngModel)]="updatedEmployee.skillSet"
+                class="form-control">
+            <div *ngIf="formControl['skillSet'].touched && formControl['skillSet'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['skillSet'].errors && formControl['skillSet'].errors['required']">SKILL SET is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="employmentStartDate">EMPLOYMENT START DATE</label>
+            <p><strong>{{ updatedEmployee.employmentStartDate}}</strong></p>
+            <input type="date" id="employmentStartDate" formControlName="employmentStartDate" [(ngModel)]="updatedEmployee.employmentStartDate"
+                class="form-control">
+            <div *ngIf="formControl['employmentStartDate'].touched && formControl['employmentStartDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['employmentStartDate'].errors && formControl['employmentStartDate'].errors['required']">EMPLOYMENT
+                    Start Date is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="employmentEndDate">EMPLOYMENT END DATE</label>
+            <p><strong>{{ updatedEmployee.employmentEndDate}}</strong></p>
+            <input type="date" id="employmentEndDate" formControlName="employmentEndDate" [(ngModel)]="updatedEmployee.employmentEndDate"
+                class="form-control">
+            <div *ngIf="formControl['employmentEndDate'].touched && formControl['employmentEndDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['employmentEndDate'].errors && formControl['employmentEndDate'].errors['required']">EMPLOYMENT END DATE
+                   is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="salary">SALARY</label>
+            <input type="text" id="salary" formControlName="salary" [(ngModel)]="updatedEmployee.salary"
+                class="form-control">
+            <div *ngIf="formControl['salary'].touched && formControl['salary'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['salary'].errors && formControl['salary'].errors['required']">SALARY  is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="employmentStatus">EMPLOYMENT STATUS</label>
+            <input type="text" id="employmentStatus" formControlName="employmentStatus" [(ngModel)]="updatedEmployee.employmentStatus"
+                class="form-control">
+            <div *ngIf="formControl['employmentStatus'].touched && formControl['employmentStatus'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['employmentStatus'].errors && formControl['employmentStatus'].errors['required']">EMPLOYMENT STATUS is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bankAccountNumber">BANK ACCOUNT NUMBER</label>
+            <input type="text" id="bankAccountNumber" formControlName="bankAccountNumber" [(ngModel)]="updatedEmployee.bankAccountNumber"
+                class="form-control">
+            <div *ngIf="formControl['bankAccountNumber'].touched && formControl['bankAccountNumber'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['bankAccountNumber'].errors && formControl['bankAccountNumber'].errors['required']">BANK ACCOUNT NUMBER is Required </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">UPDATE EMPLOYEE</button>
+    </form>
+</div>

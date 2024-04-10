@@ -1,0 +1,43 @@
+<p>edit-roles works!</p>
+<div class="container">
+    <h1 class="text-center">UPDATE ROLE</h1>
+    <a href="#" routerLink="/roles/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="roleId">ROLE ID</label>
+            <input type="text" id="roleId" formControlName="roleId" [(ngModel)]="updatedRole.roleId"
+                class="form-control" [readOnly]="true">
+                <div *ngIf="formControl['roleId'].touched && formControl['roleId'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['roleId'].errors && formControl['roleId'].errors['required']">ROLE
+                    Name is Required </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="roleName">ROLE NAME</label>
+            <input type="text" id="roleName" formControlName="roleName" [(ngModel)]="updatedRole.roleName"
+                class="form-control">
+            <div *ngIf="formControl['roleName'].touched && formControl['roleName'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['roleName'].errors && formControl['roleName'].errors['required']">ROLE
+                    Name is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">ROLE DESCRIPTION</label>
+            <input type="text" id="description" formControlName="description"
+                [(ngModel)]="updatedRole.description" class="form-control">
+            <div *ngIf="formControl['description'].touched && formControl['description'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['description'].errors && formControl['description'].errors['required']">
+                    role Description
+                    is Required </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">UPDATE ROLE</button>
+    </form>
+</div>

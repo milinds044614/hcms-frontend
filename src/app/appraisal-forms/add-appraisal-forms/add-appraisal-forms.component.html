@@ -1,0 +1,36 @@
+<p>add-appraisal-forms works!</p>
+<div class="container">
+    <h1 class="text-center">CREATE NEW APPRAISAL FORM</h1>
+    <a href="#" routerLink="/projects/list" class="btn btn-warning">BACK</a>
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="employee">EMPLOYEE ID</label>
+            <input type="text" id="employee" formControlName="employee" class="form-control">
+            <div *ngIf="formControl['employee'].touched && formControl['employee'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['employee'].errors && formControl['employee'].errors['required']">employee id is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="reviewer">REVIEWEER ID</label>
+            <input type="text" id="reviewer" formControlName="reviewer" class="form-control">
+            <div *ngIf="formControl['reviewer'].touched && formControl['reviewer'].invalid"
+                class="alert alert-danger">
+                <div
+                    *ngIf="formControl['reviewer'].errors && formControl['reviewer'].errors['required']">
+                    reviewer id
+                    is Required </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="submissionDate">SUBMISSION DATE</label>
+            <input type="date" id="submissionDate" formControlName="submissionDate" class="form-control">
+            <div *ngIf="formControl['submissionDate'].touched && formControl['submissionDate'].invalid"
+                class="alert alert-danger">
+                <div *ngIf="formControl['submissionDate'].errors && formControl['submissionDate'].errors['required']">SUBMISSION Date is Required </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">ADD APPRAISALFORM</button>
+    </form>
+</div>

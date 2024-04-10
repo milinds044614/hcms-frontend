@@ -1,0 +1,28 @@
+<p>appraisal-forms-details works!</p>
+<div class="container">
+    <a href="#" routerLink="/appraisalforms/add" class="btn btn-success">CREATE PROJECT</a>
+    <a href="#" routerLink="/appraisalforms/list" class="btn btn-secondary">VIEW appraisalforms List</a>
+    <div>
+        <strong>FORM ID : </strong>
+        <p>{{appraisalForms.formId}}</p>
+    </div>
+
+    <div>
+        <strong> EMPLOYEE ID : </strong>
+        <p>{{appraisalForms.employee}}</p>
+    </div>
+    
+    <div>
+        <strong>PROJECT START DATE : </strong>
+        <p>{{appraisalForms.submissionDate| date:'dd-MM-yyyy' }}</p>
+    </div>
+
+    
+
+    <div>
+        <strong>REVIEWER : </strong>
+        <p>{{appraisalForms.reviewer}}</p>
+    </div>
+
+
+</div>
